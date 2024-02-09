@@ -45,7 +45,10 @@ main >.context{
     align-items: center;
     padding:3em;
 }
-main>img{
+main>.image-model{
+    position: relative;
+}
+main>.image-model>img{
     margin:auto 0;
     width:600px;
     aspect-ratio: 1/1;
@@ -55,6 +58,25 @@ main>img{
     object-fit: cover;
     object-position: 50% 20%;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+}
+main>.image-model>.message{
+    position: absolute;
+    border:0.4em solid white;
+    color:white;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    border-radius: 1em;
+    padding:1em;
+    transform: translate(100%, 200%) rotate(90deg);
+    background-color: #265968;
+    transition: 0.3s opacity, 0.5s transform ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+.image-model:hover .message{
+    opacity: 1;
+    z-index: 100;
+    transform: translate(200%, -50%) rotate(0deg);
 }
 .body{
     padding-left: 100px;
